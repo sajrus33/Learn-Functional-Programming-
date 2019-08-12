@@ -6,12 +6,13 @@ const addImg = src => {
     document.body.appendChild(imgElement)
 }
 
-loadImage("images/cat1.jpg")
-    .then((img1) => {
-        addImg(img1.src)
-    })
-
-loadImage("images/cat2.jpg")
-    .then((img2) => {
-        addImg(img2.src)
-    })
+Promise.all([
+    loadImage("images/cat2.jpg"),
+    loadImage("images/cat1.jpg"),
+    loadImage("images/cat2.jpg"),
+    loadImage("images/cat1.jpg")
+]).then((images) => {
+    images.forEach(img => {
+        addImg(img.src);
+    });
+})
