@@ -1,4 +1,4 @@
-// Reduce, Reject, Find
+// Reduce
 const orders = [
     { amount: 250 },
     { amount: 400 },
